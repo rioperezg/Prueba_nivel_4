@@ -69,8 +69,15 @@ def num_max(Grafo):
     while(vertice is not None):
         vertice = Grafos.Arista.barrido_vertices(Grafo)
         if(vertice.info == superh1):
-           vertice2 = Grafos.Arista.adyacentes(vertice)
+            vertice2 = Grafos.Arista.adyacentes(Grafo)
+            while(vertice2 is not None):
+                if(vertice2.info == superh2):
+                   print("El numero maximo de episodios en los que aparecieron juntos", superh1, "y", superh2, "es:", vertice2.destino)
         elif(vertice.info == superh2):
-
+            vertice2 = Grafos.Arista.adyacentes(Grafo)
+            while(vertice2 is not None):
+                if(vertice2.info == superh1):
+                   print("El numero maximo de episodios en los que aparecieron juntos", superh1, "y", superh2, "es:", vertice2.destino)
         else:
             print("No se encontro el personaje")
+
