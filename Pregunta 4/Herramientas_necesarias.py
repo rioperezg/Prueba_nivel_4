@@ -180,7 +180,7 @@ def dijkstra(grafo, origen, destino):
         if(aux.info == origen):
             Heap.arrib_H(no_visitados, [aux, None], 0)
         else:
-            Heap.arrib_H(no_visitados, [aux, None], inf)
+            Heap.arrib_H(no_visitados, [aux, None])
         aux = aux.sig
     while(not Heap.heap_vacio(no_visitados)):
         dato = Heap.atencion_H(no_visitados)
