@@ -63,4 +63,14 @@ def arbol_maximo(Grafo, vertice):
                 arbol.tamaño += 1
             ady = ady.sig
     return arbol
-def 
+def num_max(Grafo):
+    superh1 = input("Ingrese el nombre del primer superheroe: ")
+    superh2 = input("Ingrese el nombre del segundo superheroe: ")
+    while(vertice is not None):
+        vertice = Grafos.Arista.barrido_vertices(Grafo)
+        if(vertice.info == superh1):
+           vertice2 = Grafos.Arista.adyacentes(vertice)
+        elif(vertice.info == superh2):
+
+        else:
+            print("No se encontro el personaje")

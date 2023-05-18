@@ -125,8 +125,10 @@ class Arista(object):
     def adyacentes(vertice):
         aux = vertice.adyacentes.inicio
         while(aux is not None):
+            vert = aux.info
             print(aux.destino, aux.info)
             aux = aux.sig
+            return vert
     def es_adyacente(vertice, destino):
         resultado = False
         aux = vertice.adyacentes.inicio
