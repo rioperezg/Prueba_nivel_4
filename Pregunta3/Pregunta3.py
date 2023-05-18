@@ -38,4 +38,29 @@ while(dato != ""):
     Grafos.Arista.insertar_vertice(grafo_superh, dato)
     dato = input("Ingrese el nombre del personaje: ")
     # A continuacion realizamos un barrido para ver q vertices se unen
+while(vertice is not None):
+    vertice = Grafos.Arista.barrido_vertices(grafo_superh)
+    Episodios = input("Ingrese la cantidad de episodios en los que aparecieron juntos", vertice.info,"y", vertice.adyacentes.info, ":")
+    Grafos.Arista.insertar_arista(grafo_superh, Episodios, vertice, vertice.adyacentes)
 
+# Ahora procedemos a hallar el arbol de expansion maximo desde el vertice Iron man, Thor y The Winter Soldier
+
+def arbol_maximo(Grafo, vertice):
+    arbol = Grafo()
+    arbol.inicio = vertice
+    arbol.tamaño += 1
+    vertice.visitado = True
+    cola = colas.Cola()
+    cola.arribo(vertice)
+    while(not cola.cola_vacia()):
+        nodo = cola.atencion()
+        ady = nodo.adyacentes.inicio
+        while(ady is not None):
+            dato = ady.destino
+            if(not dato.visitado):
+                cola.arribo(dato)
+                dato.visitado = True
+                arbol.tamaño += 1
+            ady = ady.sig
+    return arbol
+def 
